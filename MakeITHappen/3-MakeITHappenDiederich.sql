@@ -1,0 +1,14 @@
+DROP TABLE IF EXISTS "Address_Tbl";
+CREATE TABLE "Address_Tbl" ("Person_ID" INTEGER NOT NULL , "Address_Type" VARCHAR NOT NULL , "Address1" VARCHAR, "Address2" VARCHAR, "City" VARCHAR, "State" VARCHAR, "Zip" VARCHAR, "Country" VARCHAR, PRIMARY KEY ("Person_ID", "Address_Type"));
+DROP TABLE IF EXISTS "Address_type_Tbl";
+CREATE TABLE "Address_type_Tbl" ("Address_Type" VARCHAR PRIMARY KEY  NOT NULL , "Address_Type_Description" VARCHAR NOT NULL );
+DROP TABLE IF EXISTS "Certificate_Tbl";
+CREATE TABLE "Certificate_Tbl" ("Certificate_ID" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , "Name" VARCHAR, "Credits" INTEGER, "Start_Date" DATETIME, "End_Date" DATETIME);
+DROP TABLE IF EXISTS "Employee_Tbl";
+CREATE TABLE "Employee_Tbl" ("Person_ID" INTEGER NOT NULL , "Employee_Type" VARCHAR NOT NULL , "Employee_Title" VARCHAR, "Hire_Date" DATETIME, "Termination_Date" DATETIME, PRIMARY KEY ("Person_ID", "Employee_Type"));
+DROP TABLE IF EXISTS "Employee_Type_Tbl";
+CREATE TABLE "Employee_Type_Tbl" ("Employee_Type" VARCHAR PRIMARY KEY  NOT NULL , "Employee_Type_Description" VARCHAR);
+DROP TABLE IF EXISTS "Person_Tbl";
+CREATE TABLE "Person_Tbl" ("Person_ID" INTEGER PRIMARY KEY  AUTOINCREMENT  NOT NULL , "First_Name" VARCHAR, "Middle_Name" VARCHAR, "Last_Name" VARCHAR, "Birth_Date" DATETIME);
+DROP TABLE IF EXISTS "Student_Certificate_Tbl";
+CREATE TABLE "Student_Certificate_Tbl" ("Person_ID" INTEGER NOT NULL , "Certificate_ID" INTEGER NOT NULL , "Enrollment_Date" DATETIME, "Completion_Date" DATETIME, PRIMARY KEY ("Person_ID", "Certificate_ID"));
